@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<body>
+<h1>CRUD-like database example</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Data</th>
+    <th>Update</th>
+    <th>Delete</th>
+  </tr>
+  {% for item in elements %}
+  <tr>
+    <th>{{ item.id }}</th>
+    <th>{{ item.data }}</th>
+    <th><a href="{{ path('updateData', {'id': item.id})}}">Update</a></th>
+    <th><a href="{{ path('data', {'action' : 'delete', 'id': item.id}) }}">Delete</a></th>
+  </tr>
+  {% endfor %}
+  <tr>
+    <th></th>
+    <th>Create</th>
+    <th><a href="{{ path('createData') }}">Create</a></th>
+    <th></th>
+  </tr>
+</table>
+</body>
+</html>

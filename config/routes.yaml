@@ -1,0 +1,21 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+data:
+  path: /data/{action}/{id}/{data}
+  controller: App\Controller\cont1::Data
+  defaults:
+    id: 0
+    data: 0
+
+showData:
+  path: /ui
+  controller: App\Controller\userui::interface
+
+updateData:
+  path: /update/{id}
+  controller: App\Controller\update::update
+
+createData:
+  path: /create/
+  controller: App\Controller\create::create
